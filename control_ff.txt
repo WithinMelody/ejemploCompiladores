@@ -1,0 +1,11 @@
+:- dynamic conjuntos/3.
+
+conjuntos(follow, 'F', [eof, +]).
+conjuntos(follow, 'C', [+, eof, >]).
+conjuntos(follow, 'N', [eof, ']', '[', *, id, $]).
+conjuntos(follow, 'M', [eof]).
+conjuntos(first, 'F', ['[', *, id, $, #, >]).
+conjuntos(first, 'C', ['[', *, id, $, epsilon]).
+conjuntos(first, 'N', ['[', *, epsilon]).
+conjuntos(first, 'M', [id, '[', #, >, $, *, num, epsilon]).
+

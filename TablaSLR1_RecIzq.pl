@@ -1,0 +1,37 @@
+:- dynamic slr1/3.
+
+lr_slr1(0, t(nt), shift(3)).
+lr_slr1(2, t(nt), shift(3)).
+lr_slr1(3, t(flecha), shift(5)).
+lr_slr1(5, t(cadvacia), shift(7)).
+lr_slr1(5, t(term), shift(9)).
+lr_slr1(5, t(nt), shift(10)).
+lr_slr1(6, t(;), shift(11)).
+lr_slr1(8, t(cadvacia), shift(7)).
+lr_slr1(8, t(term), shift(9)).
+lr_slr1(8, t(nt), shift(10)).
+lr_slr1(0, nt('GCL'), goto(1)).
+lr_slr1(0, nt('PROD'), goto(2)).
+lr_slr1(2, nt('GCL'), goto(4)).
+lr_slr1(2, nt('PROD'), goto(2)).
+lr_slr1(5, nt('PD'), goto(6)).
+lr_slr1(5, nt('LISTA'), goto(8)).
+lr_slr1(8, nt('PD'), goto(12)).
+lr_slr1(8, nt('LISTA'), goto(8)).
+lr_slr1(1, fin, reduce(0)).
+lr_slr1(2, fin, reduce(1)).
+lr_slr1(4, fin, reduce(2)).
+lr_slr1(7, t(;), reduce(4)).
+lr_slr1(8, t(;), reduce(5)).
+lr_slr1(9, t(cadvacia), reduce(7)).
+lr_slr1(9, t(term), reduce(7)).
+lr_slr1(9, t(nt), reduce(7)).
+lr_slr1(9, t(;), reduce(7)).
+lr_slr1(10, t(cadvacia), reduce(8)).
+lr_slr1(10, t(term), reduce(8)).
+lr_slr1(10, t(nt), reduce(8)).
+lr_slr1(10, t(;), reduce(8)).
+lr_slr1(11, t(nt), reduce(3)).
+lr_slr1(11, fin, reduce(3)).
+lr_slr1(12, t(;), reduce(6)).
+

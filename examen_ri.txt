@@ -1,0 +1,9 @@
+M --> num ( id;
+M --> num ( id + num ) B;
+M --> num ( num ) B;
+M --> epsilon;
+B --> id B';
+B' --> * B B';
+B' --> + B B';
+B' --> / ( num ) B';
+B' --> epsilon;

@@ -1,0 +1,12 @@
+:- dynamic pri/2.
+
+pri(nt('M'), [term(num), term('('), term(id)]).
+pri(nt('M'), [term(num), term('('), term(id), term(+), term(num), term(')'), nt('B')]).
+pri(nt('M'), [term(num), term('('), term(num), term(')'), nt('B')]).
+pri(nt('M'), [epsilon]).
+pri(nt('B'), [term(id), nt('B\'')]).
+pri(nt('B\''), [term(*), nt('B'), nt('B\'')]).
+pri(nt('B\''), [term(+), nt('B'), nt('B\'')]).
+pri(nt('B\''), [term(/), term('('), term(num), term(')'), nt('B\'')]).
+pri(nt('B\''), [epsilon]).
+

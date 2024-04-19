@@ -1,0 +1,10 @@
+R --> $ R';
+R' --> + R'';
+R'' --> R;
+R'' --> L;
+R' --> num L;
+R --> epsilon;
+L --> L + L;
+L --> ( L );
+L --> epsilon;
+L --> id;

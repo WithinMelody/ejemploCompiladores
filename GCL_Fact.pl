@@ -1,0 +1,9 @@
+lr_prod(0,'GCLP',[nt('GCL')]).
+lr_prod(1,'GCL',[nt('PROD')]).
+lr_prod(2,'GCL',[nt('PROD'),nt('GCL')]).
+lr_prod(3,'PROD',[t('nt'),t('flecha'),nt('PD'),t(';')]).
+lr_prod(4,'PD',[t('cadvacia')]).
+lr_prod(5,'PD',[nt('LISTA')]).
+lr_prod(6,'PD',[nt('LISTA'),nt('PD')]).
+lr_prod(7,'LISTA',[t('term')]).
+lr_prod(8,'LISTA',[t('nt')]).

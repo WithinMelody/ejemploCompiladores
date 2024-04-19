@@ -1,0 +1,13 @@
+lr_prod(0,'E',[nt('EX')]).
+lr_prod(1,'EX',[nt('CONJ'),nt('NFA'),nt('ACEPT')]).
+lr_prod(2,'CONJ',[nt('C')]).
+lr_prod(3,'CONJ',[nt('CONJ'),nt('C')]).
+lr_prod(4,'C',[t('may'),t('='),t('{'),nt('LNUM'),t('}')]).
+lr_prod(5,'LNUM',[t('num')]).
+lr_prod(6,'LNUM',[nt('LNUM'),t(','),t('num')]).
+lr_prod(7,'NFA',[nt('T')]).
+lr_prod(8,'NFA',[nt('NFA'),nt('T')]).
+lr_prod(9,'T',[t('auto'),t('['),t('may'),t(','),t('simbolo'),t(']'),t('='),t('may')]).
+lr_prod(10,'ACEPT',[t('finales'),t('='),t('{'),nt('LMAY'),t('}')]).
+lr_prod(11,'LMAY',[t('may')]).
+lr_prod(12,'LMAY',[nt('LMAY'),t(','),t('may')]).

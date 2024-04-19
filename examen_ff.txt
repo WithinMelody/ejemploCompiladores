@@ -1,0 +1,8 @@
+first(M) = { epsilon, num, *, $, >, #, [, id }
+first(N) = { epsilon, *, [ }
+first(C) = { epsilon, $, id, *, [ }
+first(F) = { >, #, $, id, *, [ }
+follow(M) = { eof }
+follow(N) = { $, id, *, [, ], eof }
+follow(C) = { >, eof, + }
+follow(F) = { +, eof }

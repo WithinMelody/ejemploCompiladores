@@ -1,0 +1,37 @@
+:- dynamic lr_slr1/3.
+
+lr_slr1(0, t(first), shift(4)).
+lr_slr1(0, t(follow), shift(5)).
+lr_slr1(1, t(first), shift(4)).
+lr_slr1(1, t(follow), shift(5)).
+lr_slr1(3, t('('), shift(7)).
+lr_slr1(7, t(nt), shift(8)).
+lr_slr1(8, t(')'), shift(9)).
+lr_slr1(9, t(=), shift(10)).
+lr_slr1(10, t('{'), shift(11)).
+lr_slr1(11, t(term), shift(13)).
+lr_slr1(12, t('}'), shift(14)).
+lr_slr1(13, t(','), shift(15)).
+lr_slr1(15, t(term), shift(13)).
+lr_slr1(0, nt('EXAMEN'), goto(1)).
+lr_slr1(0, nt('LINEA'), goto(2)).
+lr_slr1(0, nt('FOF'), goto(3)).
+lr_slr1(1, nt('LINEA'), goto(6)).
+lr_slr1(1, nt('FOF'), goto(3)).
+lr_slr1(11, nt('LISTA'), goto(12)).
+lr_slr1(15, nt('LISTA'), goto(16)).
+lr_slr1(1, fin, reduce(0)).
+lr_slr1(2, t(first), reduce(1)).
+lr_slr1(2, t(follow), reduce(1)).
+lr_slr1(2, fin, reduce(1)).
+lr_slr1(4, t('('), reduce(4)).
+lr_slr1(5, t('('), reduce(5)).
+lr_slr1(6, t(first), reduce(2)).
+lr_slr1(6, t(follow), reduce(2)).
+lr_slr1(6, fin, reduce(2)).
+lr_slr1(13, t('}'), reduce(7)).
+lr_slr1(14, t(first), reduce(3)).
+lr_slr1(14, t(follow), reduce(3)).
+lr_slr1(14, fin, reduce(3)).
+lr_slr1(16, t('}'), reduce(6)).
+
